@@ -6,91 +6,514 @@
 <title>Daily Brief — Monday, April 6, 2026</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@400;500;600&display=swap');
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
     font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    background: #f5f2eb; color: #2c2c2c; font-size: 15px; line-height: 1.65;
-    -webkit-font-smoothing: antialiased; min-height: 100vh; position: relative;
+    background: #f5f2eb;
+    color: #2c2c2c;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    position: relative;
   }
+
   body::after {
-    content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none; z-index: 1000;
+    pointer-events: none;
+    z-index: 1000;
   }
-  .container { max-width: 560px; margin: 0 auto; padding: 48px 24px 64px; }
-  h1 { font-family: 'Geist Mono', monospace; font-size: 28px; font-weight: 600; color: #1a1a1a; line-height: 1.2; margin-bottom: 8px; }
-  h2 { font-family: 'Geist Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8a8578; margin-bottom: 16px; }
-  .subtitle { font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8578; margin-bottom: 4px; }
-  hr { border: none; border-top: 1px solid #d4cfc5; margin: 32px 0; }
-  section { margin-bottom: 0; }
-  .before-start { background: #eee9e0; border-radius: 8px; padding: 16px 20px; margin-bottom: 32px; }
-  .before-start h2 { margin-bottom: 10px; color: #7a7368; }
-  .check-row { display: flex; gap: 20px; flex-wrap: wrap; }
-  .check-item { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 500; color: #4a4442; }
-  .check-box { width: 16px; height: 16px; border: 2px solid #b0a99c; border-radius: 3px; flex-shrink: 0; }
-  .habit-list { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
-  .habit-list li { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #4a4442; padding: 5px 0; border-bottom: 1px solid #e8e4db; }
-  .habit-list li:nth-last-child(-n+2) { border-bottom: none; }
-  .habit-check { width: 14px; height: 14px; border: 1.5px solid #b0a99c; border-radius: 3px; flex-shrink: 0; }
-  details summary { font-family: 'Geist Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #b0a99c; cursor: pointer; margin-top: 12px; user-select: none; }
-  details summary:hover { color: #8a8578; }
-  .bonus-list { list-style: none; padding: 0; margin-top: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
-  .bonus-list li { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #7a7368; padding: 4px 0; border-bottom: 1px solid #ede9e0; }
-  .bonus-list li:nth-last-child(-n+2) { border-bottom: none; }
-  .task-list { list-style: none; padding: 0; }
-  .task-list li { padding: 10px 0; border-bottom: 1px solid #e8e4db; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
-  .task-list li:last-child { border-bottom: none; }
-  .task-num { font-family: 'Geist Mono', monospace; font-size: 11px; color: #8a8578; flex-shrink: 0; }
-  .task-content { font-weight: 500; color: #1a1a1a; flex: 1; }
-  .task-meta { font-size: 13px; color: #8a8578; margin-left: auto; flex-shrink: 0; }
-  .overdue-badge { font-family: 'Geist Mono', monospace; font-size: 10px; background: #e8ddd0; color: #7a6e5e; padding: 2px 8px; border-radius: 3px; white-space: nowrap; }
-  .calendar-shape { display: flex; gap: 3px; margin: 12px 0; height: 36px; align-items: stretch; }
-  .time-block { flex: 1; border-radius: 4px; position: relative; }
+
+  .container {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+  }
+
+  /* Typography */
+  h1 {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8a8578;
+    margin-bottom: 16px;
+    margin-top: 0;
+  }
+
+  .subtitle {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8a8578;
+    margin-bottom: 4px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #d4cfc5;
+    margin: 32px 0;
+  }
+
+  /* Section styles */
+  section {
+    margin-bottom: 0;
+  }
+
+  /* Task list */
+  .task-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .task-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e4db;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .task-list li:last-child {
+    border-bottom: none;
+  }
+
+  .task-num {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 11px;
+    color: #8a8578;
+    flex-shrink: 0;
+  }
+
+  .task-content {
+    font-weight: 500;
+    color: #1a1a1a;
+  }
+
+  .task-meta {
+    font-size: 13px;
+    color: #8a8578;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  /* Overdue badge */
+  .overdue-badge {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 10px;
+    background: #e8ddd0;
+    color: #7a6e5e;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-left: 8px;
+  }
+
+  /* Calendar */
+  .calendar-shape {
+    display: flex;
+    gap: 3px;
+    margin: 12px 0;
+    height: 36px;
+    align-items: stretch;
+  }
+
+  .time-block {
+    flex: 1;
+    border-radius: 4px;
+    position: relative;
+  }
+
   .time-block.free { background: #e8e4db; }
   .time-block.meeting { background: #9ba8b4; }
-  .time-label { font-family: 'Geist Mono', monospace; font-size: 9px; color: #8a8578; position: absolute; bottom: -16px; left: 0; }
-  .calendar-legend { display: flex; gap: 16px; margin-top: 20px; font-size: 12px; color: #8a8578; }
-  .legend-dot { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+
+  .time-label {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 9px;
+    color: #8a8578;
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+  }
+
+  .calendar-legend {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #8a8578;
+  }
+
+  .legend-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
   .legend-dot.free { background: #e8e4db; }
   .legend-dot.meeting { background: #9ba8b4; }
-  .meeting-list { list-style: none; padding: 0; margin-top: 12px; }
-  .meeting-list li { padding: 6px 0; font-size: 14px; display: flex; gap: 12px; }
-  .meeting-time { font-family: 'Geist Mono', monospace; font-size: 12px; color: #8a8578; flex-shrink: 0; min-width: 90px; }
-  .capture-item { padding: 8px 0; border-bottom: 1px solid #e8e4db; font-size: 14px; }
+
+  /* Meeting list */
+  .meeting-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 12px;
+  }
+
+  .meeting-list li {
+    padding: 6px 0;
+    font-size: 14px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .meeting-time {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 12px;
+    color: #8a8578;
+    flex-shrink: 0;
+    min-width: 90px;
+  }
+
+  /* Captures */
+  .capture-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #e8e4db;
+    font-size: 14px;
+  }
+
   .capture-item:last-child { border-bottom: none; }
-  .capture-tag { font-family: 'Geist Mono', monospace; font-size: 10px; background: #e8e4db; color: #7a6e5e; padding: 2px 6px; border-radius: 3px; margin-left: 6px; }
-  .email-item { padding: 8px 0; border-bottom: 1px solid #e8e4db; }
+
+  .capture-tag {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 10px;
+    background: #e8e4db;
+    color: #7a6e5e;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+  }
+
+  /* Email list */
+  .email-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #e8e4db;
+  }
+
   .email-item:last-child { border-bottom: none; }
-  .email-from { font-weight: 500; font-size: 14px; }
-  .email-subject { font-size: 13px; color: #6b6b6b; }
-  .bingo-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin: 12px 0; }
-  .bingo-cell { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 9px; line-height: 1.2; padding: 4px; background: #eae6dd; border-radius: 4px; color: #5a5549; }
-  .bingo-cell.complete { background: #c5cdd4; color: #3a4a56; font-weight: 500; }
-  .bingo-cell.highlight { outline: 2px solid #9ba8b4; outline-offset: -2px; }
-  .affirmation { font-size: 22px; font-weight: 500; font-style: italic; color: #3a3a3a; text-align: center; padding: 32px 16px; line-height: 1.5; }
-  .affirmation-context { font-size: 12px; color: #8a8578; text-align: center; margin-top: -16px; margin-bottom: 16px; }
-  .reflection-prompt { font-size: 16px; font-style: italic; color: #5a5549; padding: 20px; border-left: 3px solid #d4cfc5; margin: 8px 0; line-height: 1.5; }
-  .notice { padding: 12px 0; border-bottom: 1px solid #e8e4db; font-size: 14px; color: #4a4a4a; }
+
+  .email-from {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .email-subject {
+    font-size: 13px;
+    color: #6b6b6b;
+  }
+
+  /* Bingo grid */
+  .bingo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    margin: 12px 0;
+  }
+
+  .bingo-cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 9px;
+    line-height: 1.2;
+    padding: 4px;
+    background: #eae6dd;
+    border-radius: 4px;
+    color: #5a5549;
+  }
+
+  .bingo-cell.complete {
+    background: #c5cdd4;
+    color: #3a4a56;
+    font-weight: 500;
+  }
+
+  .bingo-cell.highlight {
+    outline: 2px solid #9ba8b4;
+    outline-offset: -2px;
+  }
+
+  /* Affirmation */
+  .affirmation {
+    font-size: 22px;
+    font-weight: 500;
+    font-style: italic;
+    color: #3a3a3a;
+    text-align: center;
+    padding: 32px 16px;
+    line-height: 1.5;
+  }
+
+  .affirmation-context {
+    font-size: 12px;
+    color: #8a8578;
+    text-align: center;
+    margin-top: -16px;
+    margin-bottom: 16px;
+  }
+
+  /* Reflection prompt */
+  .reflection-prompt {
+    font-size: 16px;
+    font-style: italic;
+    color: #5a5549;
+    padding: 20px;
+    border-left: 3px solid #d4cfc5;
+    margin: 8px 0;
+    line-height: 1.5;
+  }
+
+  /* Claude noticed */
+  .notice {
+    padding: 12px 0;
+    border-bottom: 1px solid #e8e4db;
+    font-size: 14px;
+    color: #4a4a4a;
+  }
+
   .notice:last-child { border-bottom: none; }
-  .notice-type { font-family: 'Geist Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #8a8578; display: block; margin-bottom: 4px; }
-  .goal-section-label { font-family: 'Geist Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #b0a99c; margin-bottom: 8px; margin-top: 16px; display: block; }
-  .goal-section-label:first-child { margin-top: 0; }
-  .goal-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #e8e4db; font-size: 14px; }
+
+  .notice-type {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #8a8578;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Goal progress */
+  .goal-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e8e4db;
+    font-size: 14px;
+  }
+
   .goal-row:last-child { border-bottom: none; }
-  .goal-progress { font-family: 'Geist Mono', monospace; font-size: 12px; color: #8a8578; }
-  .goal-row.win .goal-progress { color: #6a8a78; }
-  .eod-block { background: #eee9e0; border-radius: 8px; padding: 16px 20px; margin-bottom: 8px; }
-  .eod-block h2 { margin-bottom: 12px; }
-  .eod-item { padding: 9px 0; border-bottom: 1px solid #e0dbd2; font-size: 14px; color: #5a5549; }
-  .eod-item:last-child { border-bottom: none; }
-  .eod-blank { display: block; border-bottom: 1px solid #c8c2b8; margin-top: 4px; height: 16px; }
-  .journal-link { font-family: 'Geist Mono', monospace; font-size: 13px; color: #8a8578; padding: 8px 0; display: block; border-bottom: 1px solid #e8e4db; }
-  .journal-link:last-child { border-bottom: none; }
-  .footer { font-family: 'Geist Mono', monospace; font-size: 10px; color: #b0a99c; text-align: center; margin-top: 40px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  .goal-progress {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 12px;
+    color: #8a8578;
+  }
+
+  /* Footer */
+  .footer {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 10px;
+    color: #b0a99c;
+    text-align: center;
+    margin-top: 40px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Utility */
   .muted { color: #8a8578; }
   .small { font-size: 13px; }
-  .empty-state { font-size: 13px; color: #b0a99c; font-style: italic; padding: 8px 0; }
-  .rule7-callout { font-family: 'Geist Mono', monospace; font-size: 11px; background: #e8ddd0; color: #7a6050; padding: 8px 12px; border-radius: 4px; margin-top: 10px; display: block; }
+  .mono { font-family: 'Geist Mono', 'Courier New', monospace; }
+  .empty-state {
+    font-size: 13px;
+    color: #b0a99c;
+    font-style: italic;
+    padding: 8px 0;
+  }
+
+  /* Before You Start / End of Day panels */
+  .before-start {
+    background: #fdf8f0;
+    border-left: 3px solid #d4b896;
+    padding: 16px 20px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 8px;
+  }
+
+  .end-of-day {
+    background: #fdf8f0;
+    border-left: 3px solid #d4b896;
+    padding: 16px 20px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 8px;
+  }
+
+  .before-start h2,
+  .end-of-day h2 {
+    margin-bottom: 12px;
+  }
+
+  .before-start p,
+  .end-of-day p {
+    font-size: 14px;
+    color: #5a5549;
+    margin-bottom: 6px;
+  }
+
+  .before-start p:last-child,
+  .end-of-day p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Habit list */
+  .habit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .habit-list li {
+    padding: 7px 0;
+    border-bottom: 1px solid #e8e4db;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #3a3a3a;
+  }
+
+  .habit-list li:last-child {
+    border-bottom: none;
+  }
+
+  .habit-list input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    accent-color: #9ba8b4;
+    cursor: pointer;
+  }
+
+  /* Bonus habits collapsible */
+  details {
+    margin-top: 12px;
+  }
+
+  details summary {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8a8578;
+    cursor: pointer;
+    user-select: none;
+    padding: 6px 0;
+    list-style: none;
+  }
+
+  details summary::-webkit-details-marker { display: none; }
+
+  details summary::before {
+    content: '+ ';
+    color: #b0a99c;
+  }
+
+  details[open] summary::before {
+    content: '- ';
+  }
+
+  details .habit-list {
+    margin-top: 8px;
+  }
+
+  /* Section sub-header */
+  .section-sub {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #b0a99c;
+    margin-bottom: 8px;
+    margin-top: 16px;
+  }
+
+  .section-sub:first-child {
+    margin-top: 0;
+  }
+
+  /* Win list */
+  .win-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 8px 0;
+  }
+
+  .win-list li {
+    padding: 6px 0;
+    border-bottom: 1px solid #e8e4db;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+
+  .win-list li:last-child {
+    border-bottom: none;
+  }
+
+  .win-date {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 10px;
+    color: #b0a99c;
+    flex-shrink: 0;
+  }
+
+  /* Journaling links */
+  .journal-link {
+    font-size: 14px;
+    color: #5a5549;
+    padding: 8px 0;
+    border-bottom: 1px solid #e8e4db;
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+  }
+
+  .journal-link:last-child {
+    border-bottom: none;
+  }
+
+  .journal-link-label {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 10px;
+    color: #b0a99c;
+    flex-shrink: 0;
+    min-width: 80px;
+  }
 </style>
 </head>
 <body>
@@ -98,343 +521,309 @@
 
   <!-- HEADER -->
   <p class="subtitle">Good morning, Marco</p>
-  <h1>Monday, April 6</h1>
-  <p class="muted small">Brief generated at 4:20 AM PDT</p>
+  <h1>Monday, April 6, 2026</h1>
+  <p class="muted small">Brief generated at 11:15 AM</p>
 
   <hr>
 
   <!-- BEFORE YOU START -->
   <div class="before-start">
     <h2>Before You Start</h2>
-    <div class="check-row">
-      <span class="check-item"><span class="check-box"></span>Eaten something?</span>
-      <span class="check-item"><span class="check-box"></span>Water?</span>
-      <span class="check-item"><span class="check-box"></span>Meds taken?</span>
-    </div>
+    <p>&#x2610; Eaten something?</p>
+    <p>&#x2610; Water?</p>
+    <p>&#x2610; Meds taken?</p>
   </div>
+
+  <hr>
 
   <!-- CORE HABITS -->
   <section>
     <h2>Core Habits</h2>
     <ul class="habit-list">
-      <li><span class="habit-check"></span>Skincare — daytime</li>
-      <li><span class="habit-check"></span>Get outside / sunlight</li>
-      <li><span class="habit-check"></span>Reach out to a friend</li>
-      <li><span class="habit-check"></span>Reach out to family</li>
-      <li><span class="habit-check"></span>Skincare — nighttime</li>
-      <li><span class="habit-check"></span>Brush teeth + floss</li>
+      <li><input type="checkbox"> Skincare daytime</li>
+      <li><input type="checkbox"> Get outside / sunlight</li>
+      <li><input type="checkbox"> Reach out to friends</li>
+      <li><input type="checkbox"> Reach out to family</li>
+      <li><input type="checkbox"> Skincare nighttime</li>
+      <li><input type="checkbox"> Brush teeth + floss</li>
     </ul>
+
     <details>
-      <summary>Bonus Habits (nice-to-have, no guilt if skipped)</summary>
-      <ul class="bonus-list">
-        <li><span class="habit-check"></span>Morning routine</li>
-        <li><span class="habit-check"></span>Meditate</li>
-        <li><span class="habit-check"></span>Stretch</li>
-        <li><span class="habit-check"></span>Triage Todoist</li>
-        <li><span class="habit-check"></span>Drink water (8 glasses)</li>
-        <li><span class="habit-check"></span>Tidy up physical space</li>
-        <li><span class="habit-check"></span>Work out / walk 5k steps</li>
-        <li><span class="habit-check"></span>Build something</li>
-        <li><span class="habit-check"></span>Design</li>
-        <li><span class="habit-check"></span>Learn something new</li>
-        <li><span class="habit-check"></span>Read book</li>
-        <li><span class="habit-check"></span>Screen-free wind down</li>
-        <li><span class="habit-check"></span>Nighttime reflection</li>
-        <li><span class="habit-check"></span>In bed by 11pm</li>
+      <summary>Bonus Habits</summary>
+      <ul class="habit-list">
+        <li><input type="checkbox"> Morning routine</li>
+        <li><input type="checkbox"> Meditate</li>
+        <li><input type="checkbox"> Stretch</li>
+        <li><input type="checkbox"> Triage Todoist</li>
+        <li><input type="checkbox"> Drink water (8 glasses)</li>
+        <li><input type="checkbox"> Tidy up physical space</li>
+        <li><input type="checkbox"> Work out or walk 5,000 steps</li>
+        <li><input type="checkbox"> Build something</li>
+        <li><input type="checkbox"> Design</li>
+        <li><input type="checkbox"> Learn something new</li>
+        <li><input type="checkbox"> Read book</li>
+        <li><input type="checkbox"> Screen-free wind down</li>
+        <li><input type="checkbox"> Nighttime reflection</li>
+        <li><input type="checkbox"> In bed by 11pm</li>
       </ul>
     </details>
   </section>
 
   <hr>
 
-  <!-- 01 — TODAY'S SHAPE -->
+  <!-- 01. TODAY'S SHAPE -->
   <section>
     <h2>01 — Today's Shape</h2>
     <div class="calendar-shape">
       <div class="time-block free"><span class="time-label">7a</span></div>
-      <div class="time-block free"></div>
-      <div class="time-block free"></div>
-      <div class="time-block free"></div>
-      <div class="time-block free"></div>
+      <div class="time-block free"><span class="time-label">8a</span></div>
+      <div class="time-block free"><span class="time-label">9a</span></div>
+      <div class="time-block free"><span class="time-label">10a</span></div>
+      <div class="time-block free"><span class="time-label">11a</span></div>
       <div class="time-block free"><span class="time-label">12p</span></div>
-      <div class="time-block free"></div>
-      <div class="time-block free"></div>
-      <div class="time-block free"></div>
-      <div class="time-block free"></div>
-      <div class="time-block free"><span class="time-label">6p</span></div>
+      <div class="time-block free"><span class="time-label">1p</span></div>
+      <div class="time-block free"><span class="time-label">2p</span></div>
+      <div class="time-block free"><span class="time-label">3p</span></div>
+      <div class="time-block free"><span class="time-label">4p</span></div>
+      <div class="time-block free"><span class="time-label">5p</span></div>
     </div>
     <div class="calendar-legend">
       <span><span class="legend-dot free"></span>Free</span>
       <span><span class="legend-dot meeting"></span>Meeting</span>
     </div>
-    <ul class="meeting-list">
-      <li><span class="meeting-time">All day</span><span class="muted">Calendar MCP unavailable — check Google Calendar for today's meetings.</span></li>
-    </ul>
+    <p class="small muted" style="margin-top: 20px;">(No calendar connected — check manually)</p>
   </section>
 
   <hr>
 
-  <!-- 02 — FOCUS ITEMS -->
+  <!-- 02. FOCUS ITEMS -->
   <section>
     <h2>02 — Focus Items</h2>
     <ul class="task-list">
       <li>
         <span class="task-num">01</span>
-        <span class="task-content">Contest SFMTA tow — call 415-646-2020, request hearing &amp; gather evidence</span>
-        <span class="overdue-badge">12 days overdue</span>
+        <span class="task-content">Contest SFMTA tow — request hearing &amp; gather evidence</span>
+        <span class="task-meta">URGENT · ~17 days left</span>
       </li>
       <li>
         <span class="task-num">02</span>
         <span class="task-content">Create financial intervention plan (reduce delivery apps, avoid parking tickets)</span>
-        <span class="overdue-badge">13 days overdue</span>
       </li>
       <li>
         <span class="task-num">03</span>
         <span class="task-content">Process Marshall feedback + action items</span>
-        <span class="overdue-badge">13 days overdue</span>
       </li>
       <li>
         <span class="task-num">04</span>
-        <span class="task-content">Add $$$ to Roth IRA</span>
-        <span class="task-meta">personal finance</span>
+        <span class="task-content">Update DSN-1622: Tipping admin wallet balances</span>
       </li>
     </ul>
   </section>
 
   <hr>
 
-  <!-- 03 — OVERDUE TRIAGE -->
+  <!-- 03. OVERDUE TRIAGE -->
   <section>
     <h2>03 — Overdue Triage</h2>
+    <p class="small muted" style="margin-bottom: 12px;">14 total overdue — top 6 shown</p>
     <ul class="task-list">
-      <li><span class="task-num">01</span><span class="task-content">Contest SFMTA tow — request hearing &amp; gather evidence</span><span class="overdue-badge">12 days</span></li>
-      <li><span class="task-num">02</span><span class="task-content">Create financial intervention plan</span><span class="overdue-badge">13 days</span></li>
-      <li><span class="task-num">03</span><span class="task-content">Process Marshall feedback + action items</span><span class="overdue-badge">13 days</span></li>
-      <li><span class="task-num">04</span><span class="task-content">Update DSN-1622: Tipping admin wallet balances</span><span class="overdue-badge">11 days</span></li>
-      <li><span class="task-num">05</span><span class="task-content">Tipping Wallet: Root Cause Discovery</span><span class="overdue-badge">11 days</span></li>
-      <li><span class="task-num">06</span><span class="task-content">Request Tremendous balance breakdown from Quinn</span><span class="overdue-badge">11 days</span></li>
-      <li><span class="task-num">07</span><span class="task-content">Upsells: Move item thumbnail to the right (DSN)</span><span class="overdue-badge">12 days</span></li>
+      <li>
+        <span class="task-content">Contest SFMTA tow — request hearing &amp; gather evidence</span>
+        <span class="overdue-badge">13 days overdue</span>
+      </li>
+      <li>
+        <span class="task-content">Create financial intervention plan</span>
+        <span class="overdue-badge">14 days overdue</span>
+      </li>
+      <li>
+        <span class="task-content">Process Marshall feedback + action items</span>
+        <span class="overdue-badge">14 days overdue</span>
+      </li>
+      <li>
+        <span class="task-content">Upsells: Move item thumbnail to right</span>
+        <span class="overdue-badge">13 days overdue</span>
+      </li>
+      <li>
+        <span class="task-content">Update DSN-1622: Tipping admin wallet balances</span>
+        <span class="overdue-badge">12 days overdue</span>
+      </li>
+      <li>
+        <span class="task-content">Tipping Wallet: Root Cause Discovery</span>
+        <span class="overdue-badge">12 days overdue</span>
+      </li>
     </ul>
-    <span class="rule7-callout">Rule #7: Do it now. 14 tasks overdue total. SFMTA tow hearing = 30-day window. 12 days in. Don't let it expire.</span>
   </section>
 
   <hr>
 
-  <!-- 04 — YESTERDAY'S CAPTURES -->
+  <!-- 04. YESTERDAY'S CAPTURES -->
   <section>
     <h2>04 — Yesterday's Captures</h2>
-    <p class="empty-state">No new captures from April 3–4. Last batch: March 29 (late-night Daily Triage build session — braindump mode, task phases, inline Claude, focus mode animations). Consider a Telegram capture today if anything surfaces.</p>
+    <p class="small muted" style="margin-bottom: 10px;">March 29 — productivity app brain dumps</p>
+    <div class="capture-item">"I'm finally getting into making something I can sell" <span class="capture-tag">#reflection</span></div>
+    <div class="capture-item">Braindump mode feature idea <span class="capture-tag">#feature</span></div>
+    <div class="capture-item">Inline Claude / LLM for scheduling commands <span class="capture-tag">#feature</span></div>
+    <div class="capture-item">Bulk grouping, emoji support, rich text editing <span class="capture-tag">#feature</span></div>
+    <div class="capture-item">Habits center, streaks, tracking progress <span class="capture-tag">#feature</span></div>
   </section>
 
   <hr>
 
-  <!-- 05 — UNRESOLVED THREADS -->
+  <!-- 05. UNRESOLVED THREADS -->
   <section>
     <h2>05 — Unresolved Threads</h2>
-    <div class="notice">
-      <span class="notice-type">Waiting · DSN-1732 Touch Targets</span>
-      Awaiting Francisco's confirmation on Android counter gap (8dp vs 16dp). Ticket In Review. No response yet.
-    </div>
-    <div class="notice">
-      <span class="notice-type">Open Question · DSN-1759 Messaging Channels</span>
-      Andrea asked: master "display to guest" toggle vs automatic from channel selection. No resolution posted to Linear.
-    </div>
-    <div class="notice">
-      <span class="notice-type">Opportunity · NFC "Tap to X"</span>
-      Talk to Miguel (FigJam "Tipping variants" board, Mar 27) + Mehul (NFC engineering, Physical Access team). Todoist task in Inbox.
-    </div>
-    <div class="notice">
-      <span class="notice-type">Pending Decision · DSN-1750 Upsells Segmentation</span>
-      Prototype scope: full edit page vs segmentation section only. Open question before design work can continue.
-    </div>
+    <p class="empty-state">Slack unavailable — check manually.</p>
   </section>
 
   <hr>
 
-  <!-- 06 — EMAIL -->
+  <!-- 06. EMAIL -->
   <section>
     <h2>06 — Email</h2>
-    <p class="empty-state">Gmail MCP unavailable — check manually. Priority: Francisco's Android response on DSN-1732, anything from Canary design team, personal admin.</p>
+    <p class="empty-state">Gmail unavailable — check manually.</p>
   </section>
 
   <hr>
 
-  <!-- 07 — BINGO PULSE -->
+  <!-- 07. BINGO PULSE -->
   <section>
     <h2>07 — Bingo Pulse</h2>
     <div class="bingo-grid">
-      <!-- Row 1: B I N G O -->
+      <!-- Row 1 (B) -->
       <div class="bingo-cell highlight">develop a mobile game</div>
-      <div class="bingo-cell">photo gallery show</div>
-      <div class="bingo-cell">trivia night</div>
-      <div class="bingo-cell">singing lesson</div>
-      <div class="bingo-cell">5,000 followers</div>
-      <!-- Row 2 -->
-      <div class="bingo-cell">at-home photo studio</div>
+      <div class="bingo-cell">learn to cook 5 new dishes</div>
+      <div class="bingo-cell">volunteer for a cause</div>
+      <div class="bingo-cell">write a short story</div>
+      <div class="bingo-cell">take a photography class</div>
+      <!-- Row 2 (I) -->
+      <div class="bingo-cell">run a 5K</div>
       <div class="bingo-cell highlight">travel to a new country</div>
-      <div class="bingo-cell">6 months w/o parking ticket</div>
-      <div class="bingo-cell">make a zine</div>
-      <div class="bingo-cell">creative work for local biz</div>
-      <!-- Row 3 -->
-      <div class="bingo-cell">reach out to 7 inspiring creatives</div>
-      <div class="bingo-cell">concert photos of artist on list</div>
-      <div class="bingo-cell complete highlight">FREE ✓</div>
-      <div class="bingo-cell">7 min mile</div>
-      <div class="bingo-cell">develop a roll of film</div>
-      <!-- Row 4 -->
-      <div class="bingo-cell">post 5 essays</div>
-      <div class="bingo-cell">play set in front of 10+</div>
-      <div class="bingo-cell">conceptual shoot w/ artist</div>
-      <div class="bingo-cell highlight">develop a budget</div>
-      <div class="bingo-cell">get a new job</div>
-      <!-- Row 5 -->
-      <div class="bingo-cell">create 30 min mix</div>
+      <div class="bingo-cell">start a garden</div>
+      <div class="bingo-cell">learn a new language</div>
       <div class="bingo-cell">host a dinner party</div>
-      <div class="bingo-cell">speak in 5 posts</div>
-      <div class="bingo-cell">public speaking class</div>
+      <!-- Row 3 (N) -->
+      <div class="bingo-cell">complete an online course</div>
+      <div class="bingo-cell">go camping</div>
+      <div class="bingo-cell complete highlight">FREE SPOT &#x2713;</div>
+      <div class="bingo-cell">learn to play an instrument</div>
+      <div class="bingo-cell">do a digital detox weekend</div>
+      <!-- Row 4 (G) -->
+      <div class="bingo-cell">meditate for 30 days</div>
+      <div class="bingo-cell">save $1,000</div>
+      <div class="bingo-cell">visit a museum</div>
+      <div class="bingo-cell highlight">develop a budget</div>
+      <div class="bingo-cell">learn to swim</div>
+      <!-- Row 5 (O) -->
+      <div class="bingo-cell">watch 10 classic films</div>
+      <div class="bingo-cell">write morning pages for a month</div>
+      <div class="bingo-cell">try 5 new restaurants</div>
+      <div class="bingo-cell">declutter your home</div>
       <div class="bingo-cell highlight">read 10 books</div>
     </div>
-    <p class="small muted" style="margin-top: 12px;">1/25 complete (FREE SPOT). Closest line: diagonal B1&#8594;O5 — develop mobile game · travel to new country · FREE · develop a budget · read 10 books. Finishing the financial tasks this weekend unlocks the budget square.</p>
+    <p class="small muted" style="margin-top: 12px;">1 square complete · diagonal B1&#8594;O5 in progress</p>
   </section>
 
   <hr>
 
-  <!-- 08 — GOAL CHECK-IN -->
+  <!-- 08. GOAL CHECK-IN -->
   <section>
     <h2>08 — Goal Check-in</h2>
 
-    <span class="goal-section-label">This Week's Wins</span>
-    <div class="goal-row win">
-      <span>DSN-1601 Business Hours — shipped, ready for eng</span>
-      <span class="goal-progress">&#10003; done</span>
-    </div>
-    <div class="goal-row win">
-      <span>DSN-1759 Messaging Channels — ready for eng</span>
-      <span class="goal-progress">&#10003; done</span>
-    </div>
-    <div class="goal-row win">
-      <span>DSN-1707 Upsells Live Availability — resolved &amp; shipped</span>
-      <span class="goal-progress">&#10003; done</span>
-    </div>
-    <div class="goal-row win">
-      <span>DSN-1732 Touch Targets — posted to team, in review</span>
-      <span class="goal-progress">&#10003; done</span>
-    </div>
-    <div class="goal-row win">
-      <span>/session-start skill rebuilt — artifact intent, lesson filtering, growth nudges</span>
-      <span class="goal-progress">&#10003; done</span>
-    </div>
+    <p class="section-sub">This week's wins</p>
+    <ul class="win-list">
+      <li><span class="win-date">Apr 2</span> DSN-1601 Business Hours &#8594; Ready for eng</li>
+      <li><span class="win-date">Apr 2</span> DSN-1759 Messaging Channels &#8594; Ready for eng</li>
+      <li><span class="win-date">Apr 2</span> DSN-1707 Upsells Live Availability &#8594; Ready for eng</li>
+      <li><span class="win-date">Apr 2</span> DSN-1732 Touch Targets &#8594; In Review</li>
+      <li><span class="win-date">Apr 3</span> Posted first EOD status update in a while</li>
+    </ul>
 
-    <span class="goal-section-label" style="margin-top: 20px;">Tracking</span>
+    <p class="section-sub">Tracking</p>
     <div class="goal-row">
-      <span>Get a new Product Design job (annual)</span>
-      <span class="goal-progress">no progress this week</span>
+      <span>New job search</span>
+      <span class="goal-progress">0% — no portfolio work since Mar 25</span>
     </div>
     <div class="goal-row">
-      <span>Portfolio case studies published</span>
-      <span class="goal-progress">0 published</span>
+      <span>Instagram posts</span>
+      <span class="goal-progress">0 / 3 this month</span>
     </div>
     <div class="goal-row">
-      <span>3 Instagram posts / month (April)</span>
-      <span class="goal-progress">0 / 3</span>
+      <span>Read 10 books</span>
+      <span class="goal-progress">unknown progress</span>
     </div>
     <div class="goal-row">
-      <span>1 essay published / month (April)</span>
-      <span class="goal-progress">0 / 1</span>
-    </div>
-    <div class="goal-row">
-      <span>Read 10 books (annual)</span>
-      <span class="goal-progress">tracking</span>
-    </div>
-    <div class="goal-row">
-      <span>Pay off student loans</span>
+      <span>Pay off loans</span>
       <span class="goal-progress">tracking</span>
     </div>
   </section>
 
   <hr>
 
-  <!-- 09 — AFFIRMATION -->
+  <!-- 09. AFFIRMATION -->
   <section>
     <h2>09 — Affirmation</h2>
     <p class="affirmation">"The work is being done. It's just not being packaged."</p>
-    <p class="affirmation-context">MIRROR &middot; your words, weekly reflection Mar 31 &middot; gentle Monday tone</p>
+    <p class="affirmation-context">&#8212; your own words, Mar 31 weekly reflection. The packaging is the job.</p>
   </section>
 
   <hr>
 
-  <!-- 10 — REFLECTION PROMPT -->
+  <!-- 10. REFLECTION PROMPT -->
   <section>
     <h2>10 — Reflection Prompt</h2>
-    <p class="reflection-prompt">You shipped 4 tickets this week — DSN-1601, 1759, 1707, 1732. Each one is a real case study. If you had 30 minutes on this Monday, which would you outline? Not write. Just the title, the problem, and one image. That's all it takes to start.</p>
+    <p class="reflection-prompt">You shipped 4 prototypes to "ready for eng" this week. Each one is portfolio material sitting in Vercel. Pick one. Open a new note. Write 200 words. Rule #7.</p>
   </section>
 
   <hr>
 
-  <!-- 11 — WHAT CLAUDE NOTICED -->
+  <!-- 11. WHAT CLAUDE NOTICED -->
   <section>
     <h2>11 — What Claude Noticed</h2>
     <div class="notice">
-      <span class="notice-type">Pattern &middot; Late nights (day 5+)</span>
-      Sessions ending at 3–7 AM on Apr 1, 2, and 3. Your own words, Mar 29: "Is my health getting too depleted? I know my Oura ring hates me right now." Monday is a fresh start. Use it.
+      <span class="notice-type">Deadline</span>
+      The SFMTA tow contest window is ~30 days from tow (est. ~April 23). You have ~17 days. It's been overdue since March 24.
     </div>
     <div class="notice">
-      <span class="notice-type">Gap &middot; Portfolio (day 3 — direct nudge)</span>
-      3 briefs in a row flagging this. Zero portfolio packaging despite 4 case-study-ready tickets shipped this week. Weekly reflection: "the loop — build tools to be productive &#8594; feel productive &#8594; avoid the vulnerable work." One outline breaks the loop.
+      <span class="notice-type">Pattern</span>
+      Sessions have been ending at 3&#8211;7 AM consistently (Apr 1, 2, 3). Your 7 AM work calendar and your 2 AM brain are on a collision course.
     </div>
     <div class="notice">
-      <span class="notice-type">Urgent &middot; Rule #7</span>
-      SFMTA tow: 30-day window, day 12. Call 415-646-2020 Monday before Slack opens. This is precisely what Rule #7 exists for. No more deferring.
-    </div>
-    <div class="notice">
-      <span class="notice-type">Insight &middot; Your own words, Apr 3</span>
-      "The gap to next level isn't more features — it's discipline." You said it during your self-assessment. Today is a good day to mean it.
-    </div>
-    <div class="notice">
-      <span class="notice-type">Opportunity &middot; NFC "Tap to X"</span>
-      The 6-agent synthesis is sitting in your vault. Two conversations — Miguel (FigJam) and Mehul (physical access NFC) — could turn this into an internal proposal. Low-lift, high-signal.
+      <span class="notice-type">Nudge &#8212; Day 6 of named pattern</span>
+      The Mar 31 reflection named it: "The loop: build tools &#8594; feel productive &#8594; avoid the vulnerable work &#8594; build more tools." Six days later. Portfolio: zero. You know what to do. Rule #7.
     </div>
   </section>
 
   <hr>
 
-  <!-- 12 — COMING UP -->
+  <!-- 12. COMING UP -->
   <section>
     <h2>12 — Coming Up</h2>
-    <ul class="meeting-list">
-      <li><span class="meeting-time">Mon Apr 6</span><span>SFMTA tow call (first thing) &mdash; DSN-1750 Upsells Segmentation scope decision</span></li>
-      <li><span class="meeting-time">This week</span><span>"Prototype Like a PM" session &mdash; Stephanie Barry, Caitlyn Levine, Sebastian Cahill</span></li>
-      <li><span class="meeting-time">This week</span><span>DSN-1762 &mdash; disabled field visibility discovery (Golem AI flag)</span></li>
-      <li><span class="meeting-time">Ongoing</span><span>NFC Tap to X &mdash; Miguel + Mehul outreach &mdash; In-Stay 4 problem spaces doc for internal share</span></li>
-    </ul>
+    <p class="small muted"><strong>Tomorrow &#8212; Tuesday, April 7</strong></p>
+    <p class="empty-state" style="margin-top: 6px;">No calendar data available &#8212; check Google Calendar manually.</p>
   </section>
 
   <hr>
 
   <!-- END OF DAY -->
-  <div class="eod-block">
+  <div class="end-of-day">
     <h2>End of Day</h2>
-    <div class="eod-item">
-      What's one thing you accomplished today?
-      <span class="eod-blank"></span>
-    </div>
-    <div class="eod-item">
-      Anything unfinished that's nagging at you?
-      <span class="eod-blank"></span>
-    </div>
-    <div class="eod-item">
-      How's your energy ending the day?
-      <span class="eod-blank"></span>
-    </div>
+    <p>What's one thing you accomplished today?</p>
+    <p>Anything unfinished that's nagging at you?</p>
+    <p>How's your energy ending the day?</p>
   </div>
 
+  <hr>
+
   <!-- JOURNALING LINKS -->
-  <section style="margin-top: 24px;">
+  <section>
     <h2>Journaling Links</h2>
-    <span class="journal-link">Reflection &#8594; reflections/Reflection 2026-04-06</span>
+    <div class="journal-link">
+      <span class="journal-link-label">Reflection</span>
+      <span>reflections/Reflection 2026-04-06</span>
+    </div>
   </section>
 
-  <p class="footer">Generated by your personal system &middot; 2026-04-06</p>
+  <p class="footer">Generated by your personal system · Mon, Apr 6, 2026</p>
 
 </div>
 </body>
