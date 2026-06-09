@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Brief — Monday, June 8, 2026</title>
+<title>Daily Brief — Tuesday, June 9, 2026</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@400;500;600&display=swap');
 
@@ -29,619 +29,549 @@
     z-index: 1000;
   }
 
-  .container {
-    max-width: 560px;
-    margin: 0 auto;
-    padding: 48px 24px 64px;
-  }
+  .container { max-width: 560px; margin: 0 auto; padding: 48px 24px 64px; }
 
   h1 {
     font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 28px;
-    font-weight: 600;
-    color: #1a1a1a;
-    line-height: 1.2;
-    margin-bottom: 8px;
+    font-size: 28px; font-weight: 600; color: #1a1a1a;
+    line-height: 1.2; margin-bottom: 8px;
   }
 
   h2 {
     font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #8a8578;
-    margin-bottom: 16px;
-    margin-top: 0;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #8a8578;
+    margin-bottom: 16px; margin-top: 0;
   }
 
   .subtitle {
     font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #8a8578;
-    margin-bottom: 4px;
+    font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #8a8578; margin-bottom: 4px;
   }
 
-  hr {
-    border: none;
-    border-top: 1px solid #d4cfc5;
-    margin: 32px 0;
-  }
+  hr { border: none; border-top: 1px solid #d4cfc5; margin: 32px 0; }
 
   section { margin-bottom: 0; }
 
-  /* Before You Start */
-  .before-start {
-    background: #eae6dd;
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin-bottom: 24px;
-  }
-  .before-start h2 { margin-bottom: 10px; }
-
-  .checklist {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 20px;
-  }
-  .checklist li {
-    font-size: 14px;
-    color: #4a4a4a;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-  }
-  .check-box {
-    width: 16px;
-    height: 16px;
-    border: 1.5px solid #a09a8e;
-    border-radius: 3px;
-    flex-shrink: 0;
-    display: inline-block;
-  }
-
-  /* Habits */
-  .habit-list { list-style: none; padding: 0; }
-  .habit-item {
-    padding: 9px 0;
-    border-bottom: 1px solid #e8e4db;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    color: #3a3a3a;
-  }
-  .habit-item:last-child { border-bottom: none; }
-  .habit-num {
-    font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 11px;
-    color: #8a8578;
-    flex-shrink: 0;
-    width: 18px;
-  }
-
-  /* Collapsible bonus habits */
-  details { margin-top: 8px; }
-  summary {
-    font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #8a8578;
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 0;
-    user-select: none;
-  }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: '▸'; font-size: 10px; }
-  details[open] summary::after { content: '▾'; }
-
-  .bonus-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 10px;
-    padding-bottom: 4px;
-  }
-  .bonus-tag {
-    font-size: 12px;
-    color: #6b6560;
-    background: #e8e4db;
-    padding: 4px 10px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  .bonus-check {
-    width: 12px;
-    height: 12px;
-    border: 1.5px solid #a09a8e;
-    border-radius: 2px;
-    flex-shrink: 0;
-  }
-
-  /* Task list */
   .task-list { list-style: none; padding: 0; }
   .task-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid #e8e4db;
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
+    padding: 10px 0; border-bottom: 1px solid #e8e4db;
+    display: flex; align-items: baseline; gap: 10px;
   }
   .task-list li:last-child { border-bottom: none; }
   .task-num {
     font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 11px;
-    color: #8a8578;
-    flex-shrink: 0;
+    font-size: 11px; color: #8a8578; flex-shrink: 0;
   }
   .task-content { font-weight: 500; color: #1a1a1a; }
+  .task-meta { font-size: 13px; color: #8a8578; margin-left: auto; flex-shrink: 0; }
 
-  /* Calendar */
+  .overdue-badge {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 10px; background: #e8ddd0; color: #7a6e5e;
+    padding: 2px 8px; border-radius: 3px; margin-left: 8px; white-space: nowrap;
+  }
+
   .calendar-shape {
-    display: flex;
-    gap: 3px;
-    margin: 12px 0;
-    height: 36px;
-    align-items: stretch;
+    display: flex; gap: 3px; margin: 12px 0;
+    height: 36px; align-items: stretch;
   }
   .time-block { flex: 1; border-radius: 4px; position: relative; }
   .time-block.free { background: #e8e4db; }
   .time-block.meeting { background: #9ba8b4; }
   .time-label {
     font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 9px;
-    color: #8a8578;
-    position: absolute;
-    bottom: -16px;
-    left: 0;
+    font-size: 9px; color: #8a8578;
+    position: absolute; bottom: -16px; left: 0;
   }
   .calendar-legend {
-    display: flex;
-    gap: 16px;
-    margin-top: 20px;
-    font-size: 12px;
-    color: #8a8578;
+    display: flex; gap: 16px; margin-top: 20px;
+    font-size: 12px; color: #8a8578;
   }
   .legend-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 2px;
-    margin-right: 5px;
-    vertical-align: middle;
+    display: inline-block; width: 8px; height: 8px;
+    border-radius: 2px; margin-right: 5px; vertical-align: middle;
   }
   .legend-dot.free { background: #e8e4db; }
   .legend-dot.meeting { background: #9ba8b4; }
-
-  /* Meeting list */
   .meeting-list { list-style: none; padding: 0; margin-top: 12px; }
-  .meeting-list li {
-    padding: 6px 0;
-    font-size: 14px;
-    display: flex;
-    gap: 12px;
-  }
+  .meeting-list li { padding: 6px 0; font-size: 14px; display: flex; gap: 12px; }
   .meeting-time {
     font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 12px;
-    color: #8a8578;
-    flex-shrink: 0;
-    min-width: 90px;
+    font-size: 12px; color: #8a8578; flex-shrink: 0; min-width: 90px;
   }
 
-  /* Email */
+  .capture-item { padding: 8px 0; border-bottom: 1px solid #e8e4db; font-size: 14px; }
+  .capture-item:last-child { border-bottom: none; }
+  .capture-tag {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 10px; background: #e8e4db; color: #7a6e5e;
+    padding: 2px 6px; border-radius: 3px; margin-left: 6px;
+  }
+
   .email-item { padding: 8px 0; border-bottom: 1px solid #e8e4db; }
   .email-item:last-child { border-bottom: none; }
   .email-from { font-weight: 500; font-size: 14px; }
-  .email-subject { font-size: 13px; color: #6b6b6b; }
+  .email-subject { font-size: 13px; color: #6b6b6b; margin-top: 2px; }
 
-  /* Badge */
-  .badge {
-    font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 10px;
-    padding: 2px 8px;
-    border-radius: 3px;
-    margin-left: 8px;
-  }
-  .badge-blue { background: #c5cdd4; color: #3a4a56; }
-
-  /* Bingo grid */
   .bingo-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 4px;
-    margin: 12px 0;
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 4px; margin: 12px 0;
   }
   .bingo-cell {
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 9px;
-    line-height: 1.2;
-    padding: 4px;
-    background: #eae6dd;
-    border-radius: 4px;
-    color: #5a5549;
+    aspect-ratio: 1; display: flex; align-items: center;
+    justify-content: center; text-align: center;
+    font-size: 9px; line-height: 1.2; padding: 4px;
+    background: #eae6dd; border-radius: 4px; color: #5a5549;
   }
   .bingo-cell.complete { background: #c5cdd4; color: #3a4a56; font-weight: 500; }
   .bingo-cell.highlight { outline: 2px solid #9ba8b4; outline-offset: -2px; }
 
-  /* Affirmation */
   .affirmation {
-    font-size: 22px;
-    font-weight: 500;
-    font-style: italic;
-    color: #3a3a3a;
-    text-align: center;
-    padding: 32px 16px;
-    line-height: 1.5;
+    font-size: 22px; font-weight: 500; font-style: italic;
+    color: #3a3a3a; text-align: center; padding: 32px 16px; line-height: 1.5;
   }
   .affirmation-context {
-    font-size: 12px;
-    color: #8a8578;
-    text-align: center;
-    margin-top: -16px;
-    margin-bottom: 16px;
+    font-size: 12px; color: #8a8578; text-align: center;
+    margin-top: -16px; margin-bottom: 16px;
   }
 
-  /* Reflection */
   .reflection-prompt {
-    font-size: 16px;
-    font-style: italic;
-    color: #5a5549;
-    padding: 20px;
-    border-left: 3px solid #d4cfc5;
-    margin: 8px 0;
-    line-height: 1.5;
+    font-size: 16px; font-style: italic; color: #5a5549;
+    padding: 20px; border-left: 3px solid #d4cfc5;
+    margin: 8px 0; line-height: 1.5;
   }
 
-  /* Notices */
   .notice { padding: 12px 0; border-bottom: 1px solid #e8e4db; font-size: 14px; color: #4a4a4a; }
   .notice:last-child { border-bottom: none; }
   .notice-type {
     font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #8a8578;
-    display: block;
-    margin-bottom: 4px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
+    color: #8a8578; display: block; margin-bottom: 4px;
   }
 
-  /* Goals */
   .goal-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px solid #e8e4db;
-    font-size: 14px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 8px 0; border-bottom: 1px solid #e8e4db; font-size: 14px;
   }
   .goal-row:last-child { border-bottom: none; }
   .goal-progress {
     font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 12px;
-    color: #8a8578;
-    flex-shrink: 0;
-    margin-left: 12px;
+    font-size: 12px; color: #8a8578; flex-shrink: 0; margin-left: 12px;
   }
-
-  /* Subheader */
-  .subheader {
+  .goal-section-label {
     font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #a09a8e;
-    margin: 14px 0 8px;
-  }
-  .subheader:first-child { margin-top: 0; }
-
-  /* End of Day */
-  .eod-prompt { padding: 10px 0; border-bottom: 1px solid #e8e4db; font-size: 14px; color: #4a4a4a; }
-  .eod-prompt:last-child { border-bottom: none; }
-  .eod-label {
-    font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #8a8578;
-    display: block;
-    margin-bottom: 4px;
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #b0a99c; margin: 12px 0 8px; display: block;
   }
 
-  /* Journal links */
-  .journal-link {
-    font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 13px;
-    color: #8a8578;
-    display: block;
-    padding: 4px 0;
-    text-decoration: none;
-  }
-
-  /* Footer */
   .footer {
     font-family: 'Geist Mono', 'Courier New', monospace;
-    font-size: 10px;
-    color: #b0a99c;
-    text-align: center;
-    margin-top: 40px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-size: 10px; color: #b0a99c; text-align: center;
+    margin-top: 40px; letter-spacing: 0.1em; text-transform: uppercase;
   }
 
-  /* Utility */
   .muted { color: #8a8578; }
   .small { font-size: 13px; }
+  .mono { font-family: 'Geist Mono', 'Courier New', monospace; }
   .empty-state { font-size: 13px; color: #b0a99c; font-style: italic; padding: 8px 0; }
+
+  /* Before You Start */
+  .before-start {
+    background: #eae6dd; border-radius: 8px;
+    padding: 16px 20px; margin-bottom: 32px;
+  }
+  .before-start-label {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #8a8578; margin-bottom: 10px; display: block;
+  }
+  .check-row {
+    display: flex; gap: 20px; flex-wrap: wrap;
+    font-size: 14px; color: #4a4a4a;
+  }
+  .check-row span::before { content: '\2610\00a0'; font-family: 'Geist Mono', monospace; }
+
+  /* Habits */
+  .habit-list {
+    list-style: none; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px;
+  }
+  .habit-list li {
+    font-size: 14px; color: #4a4a4a; padding: 4px 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .habit-list li::before { content: '\2610'; font-family: 'Geist Mono'; color: #9ba8b4; font-size: 13px; flex-shrink: 0; }
+
+  details { }
+  details summary {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #8a8578;
+    cursor: pointer; margin-bottom: 8px; outline: none;
+    list-style: none;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::before { content: '+ '; }
+  details[open] summary::before { content: '- '; }
+  details[open] summary { margin-bottom: 12px; }
+  .bonus-list {
+    list-style: none; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px;
+  }
+  .bonus-list li {
+    font-size: 13px; color: #7a6e5e; padding: 2px 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .bonus-list li::before { content: '\25CB'; font-family: 'Geist Mono'; color: #b0a99c; font-size: 11px; flex-shrink: 0; }
+
+  /* End of Day */
+  .eod-prompt { margin-bottom: 16px; }
+  .eod-prompt p { font-size: 14px; color: #4a4a4a; margin-bottom: 6px; }
+  .eod-input {
+    width: 100%; border: 1px solid #d4cfc5; background: #f0ece3;
+    border-radius: 4px; padding: 8px 12px;
+    font-family: 'Geist', sans-serif; font-size: 14px; color: #2c2c2c;
+    resize: none; min-height: 48px;
+  }
+
+  .journal-link {
+    display: inline-block;
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    font-size: 12px; color: #8a8578; text-decoration: none;
+    border-bottom: 1px dashed #b0a99c; padding-bottom: 2px;
+  }
 </style>
 </head>
 <body>
 <div class="container">
 
+  <!-- BEFORE YOU START -->
+  <div class="before-start">
+    <span class="before-start-label">Before You Start</span>
+    <div class="check-row">
+      <span>Eaten something?</span>
+      <span>Water?</span>
+      <span>Meds taken?</span>
+    </div>
+  </div>
+
   <!-- HEADER -->
   <p class="subtitle">Good morning, Marco</p>
-  <h1>Monday, June 8</h1>
-  <p class="muted small">Brief generated at 4:06 AM PDT <span class="badge badge-blue">First day back from PTO</span></p>
+  <h1>Tuesday, June 9, 2026</h1>
+  <p class="muted small">Brief generated at 4:06 AM PDT</p>
 
   <hr>
-
-  <!-- BEFORE YOU START -->
-  <section>
-    <div class="before-start">
-      <h2>Before You Start</h2>
-      <ul class="checklist">
-        <li><span class="check-box"></span> Eaten something?</li>
-        <li><span class="check-box"></span> Water?</li>
-        <li><span class="check-box"></span> Meds taken?</li>
-      </ul>
-    </div>
-  </section>
 
   <!-- CORE HABITS -->
   <section>
     <h2>Core Habits</h2>
     <ul class="habit-list">
-      <li class="habit-item"><span class="habit-num">1</span> Skincare daytime</li>
-      <li class="habit-item"><span class="habit-num">2</span> Get outside / sunlight</li>
-      <li class="habit-item"><span class="habit-num">3</span> Reach out to friends</li>
-      <li class="habit-item"><span class="habit-num">4</span> Reach out to family</li>
-      <li class="habit-item"><span class="habit-num">5</span> Skincare nighttime</li>
-      <li class="habit-item"><span class="habit-num">6</span> Brush teeth + floss</li>
+      <li>Skincare daytime</li>
+      <li>Get outside / sunlight</li>
+      <li>Reach out to a friend</li>
+      <li>Reach out to family</li>
+      <li>Skincare nighttime</li>
+      <li>Brush teeth + floss</li>
     </ul>
   </section>
 
+  <hr>
+
   <!-- BONUS HABITS -->
-  <details>
-    <summary>Bonus Habits</summary>
-    <div class="bonus-grid">
-      <span class="bonus-tag"><span class="bonus-check"></span> Morning routine</span>
-      <span class="bonus-tag"><span class="bonus-check"></span> Meditate</span>
-      <span class="bonus-tag"><span class="bonus-check"></span> Stretch</span>
-      <span class="bonus-tag"><span class="bonus-check"></span> Triage Todoist</span>
-      <span class="bonus-tag"><span class="bonus-check"></span> Drink water (8 glasses)</span>
-      <span class="bonus-tag"><span class="bonus-check"></span> Tidy up physical space</span>
-      <span class="bonus-tag"><span class="bonus-check"></span> Work out or walk 5,000 steps</span>
-      <span class="bonus-tag"><span class="bonus-check"></span> Build something</span>
-      <span class="bonus-tag"><span class="bonus-check"></span> Design</span>
-      <span class="bonus-tag"><span class="bonus-check"></span> Learn something new</span>
-      <span class="bonus-tag"><span class="bonus-check"></span> Read book</span>
-      <span class="bonus-tag"><span class="bonus-check"></span> Screen-free wind down</span>
-      <span class="bonus-tag"><span class="bonus-check"></span> Nighttime reflection</span>
-      <span class="bonus-tag"><span class="bonus-check"></span> In bed by 11pm</span>
-    </div>
-  </details>
+  <section>
+    <details>
+      <summary>Bonus Habits &mdash; nice-to-haves, no guilt if skipped</summary>
+      <ul class="bonus-list">
+        <li>Morning routine</li>
+        <li>Meditate</li>
+        <li>Stretch</li>
+        <li>Triage Todoist</li>
+        <li>Drink water (8 glasses)</li>
+        <li>Tidy up physical space</li>
+        <li>Work out or walk 5,000 steps</li>
+        <li>Build something</li>
+        <li>Design</li>
+        <li>Learn something new</li>
+        <li>Read book</li>
+        <li>Screen-free wind down</li>
+        <li>Nighttime reflection</li>
+        <li>In bed by 11pm</li>
+      </ul>
+    </details>
+  </section>
 
   <hr>
 
-  <!-- 01: TODAY'S SHAPE -->
+  <!-- 01 — TODAY'S SHAPE -->
   <section>
-    <h2>01 — Today's Shape</h2>
+    <h2>01 &mdash; Today&apos;s Shape</h2>
     <div class="calendar-shape">
-      <!-- 7am – 6pm, 11 one-hour blocks -->
-      <div class="time-block free"><span class="time-label">7</span></div>
-      <div class="time-block meeting"><span class="time-label">8</span></div>
-      <div class="time-block meeting"><span class="time-label">9</span></div>
-      <div class="time-block free"><span class="time-label">10</span></div>
-      <div class="time-block free"><span class="time-label">11</span></div>
-      <div class="time-block free"><span class="time-label">12</span></div>
-      <div class="time-block meeting"><span class="time-label">1</span></div>
-      <div class="time-block free"><span class="time-label">2</span></div>
-      <div class="time-block free"><span class="time-label">3</span></div>
-      <div class="time-block meeting"><span class="time-label">4</span></div>
-      <div class="time-block free"><span class="time-label">5</span></div>
+      <div class="time-block free"><span class="time-label">7a</span></div>
+      <div class="time-block meeting"></div>
+      <div class="time-block meeting"></div>
+      <div class="time-block meeting"></div>
+      <div class="time-block meeting"></div>
+      <div class="time-block meeting"><span class="time-label">12p</span></div>
+      <div class="time-block meeting"></div>
+      <div class="time-block meeting"></div>
+      <div class="time-block free"></div>
+      <div class="time-block meeting"></div>
+      <div class="time-block free"><span class="time-label">5p</span></div>
     </div>
     <div class="calendar-legend">
       <span><span class="legend-dot free"></span>Free</span>
       <span><span class="legend-dot meeting"></span>Meeting</span>
     </div>
     <ul class="meeting-list">
-      <li><span class="meeting-time">8:00 – 8:30</span> <span>In-Stay - Sync</span></li>
-      <li><span class="meeting-time">8:45 – 9:30</span> <span>Product Team - Weekly</span></li>
-      <li><span class="meeting-time">1:00 – 2:00</span> <span>Nicolas / Marco: Weekly Sync</span></li>
-      <li><span class="meeting-time">4:00 – 4:45</span> <span>product testing</span></li>
+      <li><span class="meeting-time">8:00 &ndash; 9:00</span><span>Eng Onboarding &mdash; Upsells Consolidation</span></li>
+      <li><span class="meeting-time">9:00 &ndash; 9:30</span><span>Tipping Sync</span></li>
+      <li><span class="meeting-time">10:00 &ndash; 10:30</span><span>Guest Journey Leads Sync</span></li>
+      <li><span class="meeting-time">11:00 &ndash; 12:00</span><span>Nicolas / Marco: Weekly Sync</span></li>
+      <li><span class="meeting-time">12:30 &ndash; 1:30</span><span>Design Jam</span></li>
+      <li><span class="meeting-time">2:00 &ndash; 2:30</span><span>Marco &lt;&gt; Ishwar</span></li>
+      <li><span class="meeting-time">4:00 &ndash; 4:45</span><span>Product Testing</span></li>
     </ul>
+    <p class="small muted" style="margin-top: 12px;">7 meetings &middot; ~3 hours free</p>
   </section>
 
   <hr>
 
-  <!-- 02: FOCUS ITEMS -->
+  <!-- 02 — FOCUS ITEMS -->
   <section>
-    <h2>02 — Focus Items</h2>
+    <h2>02 &mdash; Focus Items</h2>
     <ul class="task-list">
-      <li><span class="task-num">01</span> <span class="task-content">Accept / decline GitHub invite: design-team-claude-tools (from msantana)</span></li>
-      <li><span class="task-num">02</span> <span class="task-content">Prep for Nicolas / Marco Weekly Sync at 1pm</span></li>
-      <li><span class="task-num">03</span> <span class="task-content">Deep work block 10am–12pm — portfolio or job search, not another tool</span></li>
+      <li>
+        <span class="task-num">01</span>
+        <span class="task-content">Reply to Figma comment &mdash; add &ldquo;Not available anymore&rdquo; empty state (Upsells: Extend Your Stay)</span>
+      </li>
+      <li>
+        <span class="task-num">02</span>
+        <span class="task-content">Triage Linear inbox (9+ unread notifications)</span>
+      </li>
+      <li>
+        <span class="task-num">03</span>
+        <span class="task-content">Accept GitHub invite &mdash; msantana-canary/design-team-claude-tools</span>
+      </li>
+      <li>
+        <span class="task-num">04</span>
+        <span class="task-content">Reply to Boardy &mdash; AI product design networking (3rd follow-up, worth 2 sentences)</span>
+      </li>
+      <li>
+        <span class="task-num">05</span>
+        <span class="task-content">Financial intervention plan <span class="overdue-badge">78 days overdue</span></span>
+      </li>
     </ul>
   </section>
 
   <hr>
 
-  <!-- 03: OVERDUE TRIAGE -->
+  <!-- 03 — OVERDUE TRIAGE -->
   <section>
-    <h2>03 — Overdue Triage</h2>
-    <p class="empty-state">Nothing overdue. Clean slate coming off PTO.</p>
+    <h2>03 &mdash; Overdue Triage</h2>
+    <ul class="task-list">
+      <li>
+        <span class="task-content">Financial intervention plan (delivery apps, parking tickets, CC payoff)</span>
+        <span class="overdue-badge">78d</span>
+      </li>
+      <li>
+        <span class="task-content">Update DSN-1622: Tipping admin wallet balances</span>
+        <span class="overdue-badge">76d</span>
+      </li>
+      <li>
+        <span class="task-content">Review SF hotel list + schedule housekeeping visits</span>
+        <span class="overdue-badge">71d</span>
+      </li>
+      <li>
+        <span class="task-content">Respond to recruiters + LinkedIn messages</span>
+        <span class="overdue-badge">62d</span>
+      </li>
+      <li>
+        <span class="task-content">Review Tipping Q2 Design Project List draft</span>
+        <span class="overdue-badge">62d</span>
+      </li>
+    </ul>
+    <p class="small muted" style="margin-top: 12px;">15 total overdue. Pick one today &mdash; Rule #7: Do it now.</p>
   </section>
 
   <hr>
 
-  <!-- 04: YESTERDAY'S CAPTURES -->
+  <!-- 04 — YESTERDAY'S CAPTURES -->
   <section>
-    <h2>04 — Yesterday's Captures</h2>
-    <p class="empty-state">No recent captures. Inbox last processed March 24.</p>
+    <h2>04 &mdash; Yesterday&apos;s Captures</h2>
+    <p class="empty-state">No captures from yesterday (June 8). Last Quick Captures entry was March 29.</p>
   </section>
 
   <hr>
 
-  <!-- 05: UNRESOLVED THREADS -->
+  <!-- 05 — UNRESOLVED THREADS -->
   <section>
-    <h2>05 — Unresolved Threads</h2>
-    <p class="empty-state">Slack unavailable — check manually.</p>
+    <h2>05 &mdash; Unresolved Threads</h2>
+    <div class="notice">
+      <span class="notice-type">Slack</span>
+      Wenjun and 1 other sent you messages &mdash; check your digest for context.
+    </div>
+    <div class="notice">
+      <span class="notice-type">Linear</span>
+      9+ unread notifications on Canary Technologies &mdash; triage before or between your morning meetings.
+    </div>
   </section>
 
   <hr>
 
-  <!-- 06: EMAIL -->
+  <!-- 06 — EMAIL -->
   <section>
-    <h2>06 — Email</h2>
+    <h2>06 &mdash; Email</h2>
     <div class="email-item">
-      <p class="email-from">GitHub <span class="badge badge-blue">action needed</span></p>
-      <p class="email-subject">msantana-canary invited you to collaborate on design-team-claude-tools</p>
+      <p class="email-from">Figma &mdash; joanne</p>
+      <p class="email-subject">&ldquo;@Marco Sevilla could you add an empty screen? I mean &lsquo;Not available anymore&rsquo; screen&rdquo; &mdash; Upsells: Extend Your Stay</p>
     </div>
     <div class="email-item">
-      <p class="email-from">Canary all-hands thread</p>
-      <p class="email-subject">Re: Welcome to Canary Technologies, Donna! — no action needed</p>
+      <p class="email-from">GitHub &mdash; msantana-canary</p>
+      <p class="email-subject">Invited you to collaborate on msantana-canary/design-team-claude-tools</p>
+    </div>
+    <div class="email-item">
+      <p class="email-from">Boardy (boardy.b@introssolveproblems.co)</p>
+      <p class="email-subject">3rd follow-up &mdash; senior designers making the shift to AI product design; wants to intro you</p>
+    </div>
+    <div class="email-item">
+      <p class="email-from">Linear (notifications@linear.app)</p>
+      <p class="email-subject">9+ unread notifications on Canary Technologies</p>
     </div>
   </section>
 
   <hr>
 
-  <!-- 07: BINGO PULSE -->
+  <!-- 07 — BINGO PULSE -->
   <section>
-    <h2>07 — Bingo Pulse</h2>
+    <h2>07 &mdash; Bingo Pulse</h2>
     <div class="bingo-grid">
-      <!-- Row 1 — B I N G O -->
-      <div class="bingo-cell highlight">develop a mobile game</div>
+      <!-- Row 1 -->
+      <div class="bingo-cell">develop a mobile game</div>
       <div class="bingo-cell">photo gallery show</div>
       <div class="bingo-cell">trivia night</div>
       <div class="bingo-cell">singing lesson</div>
       <div class="bingo-cell">5,000 followers</div>
       <!-- Row 2 -->
       <div class="bingo-cell">at-home photo studio</div>
-      <div class="bingo-cell highlight">travel to a new country</div>
-      <div class="bingo-cell">6 months w/o parking ticket</div>
+      <div class="bingo-cell">travel to a new country</div>
+      <div class="bingo-cell">6 mo w/o parking ticket</div>
       <div class="bingo-cell">make a zine</div>
       <div class="bingo-cell">creative work for local biz</div>
-      <!-- Row 3 -->
-      <div class="bingo-cell">7 inspiring creatives</div>
-      <div class="bingo-cell">concert photos</div>
-      <div class="bingo-cell complete highlight">FREE SPOT ✓</div>
-      <div class="bingo-cell">7 min mile</div>
-      <div class="bingo-cell">develop a roll of film</div>
+      <!-- Row 3 — highlighted (closest to BINGO) -->
+      <div class="bingo-cell highlight">reach out to 7 inspiring creatives</div>
+      <div class="bingo-cell highlight">concert photos of an artist</div>
+      <div class="bingo-cell complete highlight">FREE &#10003;</div>
+      <div class="bingo-cell highlight">7 min mile</div>
+      <div class="bingo-cell highlight">develop a roll of film</div>
       <!-- Row 4 -->
       <div class="bingo-cell">post 5 essays</div>
-      <div class="bingo-cell">play set 10+ people</div>
-      <div class="bingo-cell">conceptual shoot w/ artist</div>
-      <div class="bingo-cell highlight">develop a budget</div>
+      <div class="bingo-cell">play set in front of 10+</div>
+      <div class="bingo-cell">conceptual shoot with artist</div>
+      <div class="bingo-cell">develop a budget</div>
       <div class="bingo-cell">get a new job</div>
       <!-- Row 5 -->
       <div class="bingo-cell">create 30 min mix</div>
       <div class="bingo-cell">host a dinner party</div>
       <div class="bingo-cell">speak in 5 posts</div>
       <div class="bingo-cell">public speaking class</div>
-      <div class="bingo-cell highlight">read 10 books</div>
+      <div class="bingo-cell">read 10 books</div>
     </div>
-    <p class="small muted" style="margin-top: 12px;">1/25 complete · Highlighted diagonal: mobile game → travel → FREE → budget → read 10 books. All five are achievable this year.</p>
+    <p class="small muted" style="margin-top: 12px;">1/25 complete (FREE SPOT). Row 3 is closest &mdash; reach out to a creative, shoot a concert, develop a roll of film.</p>
   </section>
 
   <hr>
 
-  <!-- 08: GOAL CHECK-IN -->
+  <!-- 08 — GOAL CHECK-IN -->
   <section>
-    <h2>08 — Goal Check-in</h2>
-    <p class="subheader">Recent Wins</p>
-    <div class="goal-row"><span>Shipped TIP-4735 dept tipping prototype</span><span class="goal-progress">May 6</span></div>
-    <div class="goal-row"><span>POS V4 — Nico feedback applied &amp; deployed</span><span class="goal-progress">Apr 9</span></div>
-    <div class="goal-row"><span>DSN-1750 Upsells Segmentation — 3-screen flow built</span><span class="goal-progress">Apr 8</span></div>
-    <p class="subheader">Tracking</p>
-    <div class="goal-row"><span>Get a new Product Design job</span><span class="goal-progress">in progress</span></div>
-    <div class="goal-row"><span>3 IG posts / month</span><span class="goal-progress">– / 3</span></div>
-    <div class="goal-row"><span>Shoot one concert or music event / month</span><span class="goal-progress">– / 1</span></div>
-    <div class="goal-row"><span>Write + publish one article / month</span><span class="goal-progress">– / 1</span></div>
-    <div class="goal-row"><span>Bingo card</span><span class="goal-progress">1 / 25</span></div>
-  </section>
+    <h2>08 &mdash; Goal Check-in</h2>
 
-  <hr>
-
-  <!-- 09: AFFIRMATION -->
-  <section>
-    <h2>09 — Affirmation</h2>
-    <p class="affirmation">"Eleven days to breathe. Now build something that lasts."</p>
-    <p class="affirmation-context">Back from PTO · Rule #7: Do it now</p>
-  </section>
-
-  <hr>
-
-  <!-- 10: REFLECTION PROMPT -->
-  <section>
-    <h2>10 — Reflection Prompt</h2>
-    <p class="reflection-prompt">You've had 11 days away from the desk. What's the one thing you want to actually move forward today — not the easiest task, but the one that matters most?</p>
-  </section>
-
-  <hr>
-
-  <!-- 11: WHAT CLAUDE NOTICED -->
-  <section>
-    <h2>11 — What Claude Noticed</h2>
-    <div class="notice">
-      <span class="notice-type">Return</span>
-      Today is your first day back after 11 days of PTO (May 28–June 8). Calendar has 4 meetings, all bracketed in the morning and late afternoon — the 10am–12pm and 2pm–4pm blocks are genuinely open. Use them.
+    <span class="goal-section-label">This week&apos;s wins</span>
+    <div class="goal-row">
+      <span>Shipped TIP-4735 tipping prototype &mdash; 5 variants, deployed to Vercel, team summary written (May 6)</span>
+      <span class="goal-progress">&#10003; done</span>
     </div>
-    <div class="notice">
-      <span class="notice-type">Action</span>
-      GitHub: @msantana-canary invited you to <strong>design-team-claude-tools</strong>. Looks like the design team is building Claude integrations — worth checking and responding.
+
+    <span class="goal-section-label" style="margin-top: 16px;">Tracking</span>
+    <div class="goal-row">
+      <span>Get a new product design job</span>
+      <span class="goal-progress">0 apps sent</span>
     </div>
+    <div class="goal-row">
+      <span>Create a zine</span>
+      <span class="goal-progress">not started</span>
+    </div>
+    <div class="goal-row">
+      <span>At-home photography studio</span>
+      <span class="goal-progress">not started</span>
+    </div>
+    <div class="goal-row">
+      <span>Pay off student loans</span>
+      <span class="goal-progress">no data</span>
+    </div>
+    <div class="goal-row">
+      <span>Read 10 books (bingo)</span>
+      <span class="goal-progress">0 / 10</span>
+    </div>
+    <div class="goal-row">
+      <span>Reach out to 7 inspiring creatives (bingo)</span>
+      <span class="goal-progress">0 / 7</span>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- 09 — AFFIRMATION -->
+  <section>
+    <h2>09 &mdash; Affirmation</h2>
+    <p class="affirmation">&ldquo;You shipped TIP-4735 in one afternoon &mdash; five variants, deployed, team summary written. That same person doesn&rsquo;t need a perfect portfolio. They just need to press send.&rdquo;</p>
+    <p class="affirmation-context">tone: hype &middot; 34 days since last session &middot; time to go again</p>
+  </section>
+
+  <hr>
+
+  <!-- 10 — REFLECTION PROMPT -->
+  <section>
+    <h2>10 &mdash; Reflection Prompt</h2>
+    <p class="reflection-prompt">No sessions logged since May 6. No job applications in the tracker. Not asking for an explanation &mdash; just one honest answer: what&rsquo;s the one thing you&rsquo;ve been avoiding that would feel good to finally start?</p>
+  </section>
+
+  <hr>
+
+  <!-- 11 — WHAT CLAUDE NOTICED -->
+  <section>
+    <h2>11 &mdash; What Claude Noticed</h2>
     <div class="notice">
       <span class="notice-type">Gap</span>
-      Last session logged: May 6 — over a month ago. Session logs are what lets this brief understand what you're actually building. Good day to restart the habit.
+      34 days since your last logged session (May 6). Your previous rhythm was near-daily. Something shifted &mdash; worth naming it.
     </div>
     <div class="notice">
-      <span class="notice-type">Pattern (from March)</span>
-      "The loop: build tools → feel productive → avoid the vulnerable work → build more tools." You named it yourself. Today's open blocks are an invitation for the portfolio work, not another tool.
+      <span class="notice-type">Overdue</span>
+      15 overdue tasks. The oldest &mdash; &ldquo;financial intervention plan&rdquo; &mdash; is 78 days old. It never got hard; it just got easier to skip each day.
+    </div>
+    <div class="notice">
+      <span class="notice-type">Opportunity</span>
+      msantana-canary invited you to design-team-claude-tools on GitHub. Given how energized you were about AI tooling in April, this is worth accepting and exploring.
+    </div>
+    <div class="notice">
+      <span class="notice-type">Job Search</span>
+      0 applications tracked. Boardy has now sent 3 follow-ups about AI product design networking &mdash; this is a warm lead. A 2-sentence reply today keeps the door open.
     </div>
   </section>
 
   <hr>
 
-  <!-- 12: COMING UP -->
+  <!-- 12 — COMING UP (Tomorrow) -->
   <section>
-    <h2>12 — Coming Up</h2>
-    <p class="subheader">Tomorrow — Tuesday, June 9</p>
+    <h2>12 &mdash; Coming Up</h2>
+    <p class="small muted" style="margin-bottom: 10px;">Tomorrow &mdash; Wednesday, June 10</p>
     <ul class="meeting-list">
-      <li><span class="meeting-time">8:00 – 9:00</span> <span>Eng Onboarding — Upsells Consolidation</span></li>
-      <li><span class="meeting-time">9:00 – 9:30</span> <span>Tipping Sync</span></li>
-      <li><span class="meeting-time">10:00 – 10:30</span> <span>Guest Journey Leads Sync</span></li>
-      <li><span class="meeting-time">12:30 – 1:30</span> <span>Design Jam</span></li>
-      <li><span class="meeting-time">2:00 – 2:30</span> <span>Marco &lt;&gt; Ishwar</span></li>
-      <li><span class="meeting-time">4:00 – 4:45</span> <span>product testing</span></li>
+      <li><span class="meeting-time">7:45 &ndash; 8:45</span><span>Commute (DNS)</span></li>
+      <li><span class="meeting-time">8:00 &ndash; 8:30</span><span>In-Stay Sync</span></li>
+      <li><span class="meeting-time">9:00 &ndash; 9:45</span><span>Product &lt;&gt; CS: In-Stay</span></li>
+      <li><span class="meeting-time">4:00 &ndash; 4:45</span><span>Product Testing</span></li>
     </ul>
-    <p class="small muted" style="margin-top: 10px;">Heavy meeting day tomorrow — use today's open blocks for deep work.</p>
   </section>
 
   <hr>
@@ -650,16 +580,16 @@
   <section>
     <h2>End of Day</h2>
     <div class="eod-prompt">
-      <span class="eod-label">Accomplishment</span>
-      What's one thing you accomplished today?
+      <p>What&apos;s one thing you accomplished today?</p>
+      <textarea class="eod-input" rows="2" placeholder="Write it here..."></textarea>
     </div>
     <div class="eod-prompt">
-      <span class="eod-label">Unfinished</span>
-      Anything unfinished that's nagging at you?
+      <p>Anything unfinished that&apos;s nagging at you?</p>
+      <textarea class="eod-input" rows="2" placeholder="Get it out..."></textarea>
     </div>
     <div class="eod-prompt">
-      <span class="eod-label">Energy Check</span>
-      How's your energy ending the day?
+      <p>How&apos;s your energy ending the day?</p>
+      <textarea class="eod-input" rows="2" placeholder="Low / medium / high &mdash; or just describe it..."></textarea>
     </div>
   </section>
 
@@ -668,10 +598,11 @@
   <!-- JOURNALING LINKS -->
   <section>
     <h2>Journaling Links</h2>
-    <span class="journal-link">reflections/Reflection 2026-06-08</span>
+    <p class="small muted" style="margin-bottom: 8px;">Create tonight&apos;s reflection:</p>
+    <a class="journal-link" href="obsidian://open?vault=daily-brief-data&amp;file=reflections%2FReflection%202026-06-09">reflections/Reflection 2026-06-09</a>
   </section>
 
-  <p class="footer">Generated by your personal system · 2026-06-08</p>
+  <p class="footer">Generated by your personal system &middot; 2026-06-09</p>
 
 </div>
 </body>
